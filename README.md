@@ -150,5 +150,26 @@ For Loops
 For more information on For Loops:
 https://www.w3schools.com/python/python_for_loops.asp
 
+
+Iterable
+    
+    An iterable can be a list, dictionary, tuple, set, string, etc.
+    
+    These are iterables because they can be iterated over, we can go one by one over each item in the collection.
+    
+    Iterable is the noun, it is a thing.
+    
+    To iterate is the action, we iterate over iterables.
+    
+Enumerate
+
+    The enumerate function is a useful function as it allows you to iterate over a collection and return the item and the index of said item.
+    ex:
+        for i, char in enumerate("Hello"):
+            print(i, char)
+            
+    This would return the indices and letters inside hello, [0] h, [1] e, so on so forth
+    
+ 
     
     
