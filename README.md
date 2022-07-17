@@ -321,5 +321,52 @@ Docstrings
 For more information on docstrings:
 https://www.programiz.com/python-programming/docstrings
 
+*args and **kwargs
 
+    Functions have special characters called *args and **kwargs
     
+    Using *args as our parameter tells a function that our parameter can take as many arguments as needed.
+    ex:
+    
+        def super_func(*args):
+            return sum(args)
+            
+        print(super_func(1,2,3,4,5)) -> outputs the sum of all numbers provided (15)
+        
+    Using **kwargs in our parameter allows for the addition of key-value pairs in our function. It actually creates a dictionary with the 
+    key-value pairs we've created in our function argument.
+    
+    ex:
+        
+        def super_func(*args, **kwargs):
+            total = 0
+            for items in kwargs.values():
+                total += items
+            return sum(args) + total
+            
+        print(super_func(1,2,3,4,5, num1=5, num2=10))
+        
+       This function accepts any number of arguments, but also creates a dictionary of key-value pairs. Inside of the function, we created a variable
+       named total and set it to 0, in order to iterate through our dictionary (kwargs.values()) and add the items to the total variable.
+       This enables us to return the sum of all our arguments (the sum of 1 + 2 + 3 + 4 + 5 and the sum of num1(5) + num2(10)) for a total of
+       30 when printed.
+       
+To see this in action:
+https://replit.com/@AutomationApe/args-and-kwargs#main.py
+
+Rules for function parameters
+
+    When created a function, such as super_func(), there is a rule for the order of what goes between the paranthesis:
+    
+    The rule is:
+    The actual parameters should come first, then the *args, then the default parameters, and finally the **kwargs
+    
+    Rule: params, *args, default params, **kwargs
+    
+    ex:
+    
+        def super_func(name, *args, name="Jaime", **kwargs):
+
+
+        
+   
