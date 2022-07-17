@@ -221,6 +221,105 @@ Break, Continue, Pass
         
     This code will do absolutely nothing but can act as a placeholder while you are designing your loop.
     
+Functions
 
+    Functions are powerful tools in programming that allow us to write instructions to execute in order to complete a task. Print() is a function.
     
+    We can also create our own functions.
+    ex:
+    
+        def say_hello():
+            print("Hello!")
+            
+    We would make use of this function as follows:
+        say_hello()
+        
+    Functions are great thanks to their ability to be reused multiple times. Rather than writing something over and over again, we could define
+    a function and call the function instead. 
+    
+    * Functions should do one thing really well *
+    * Functions should typically return something *
+   
+For more information on functions:
+https://www.w3schools.com/python/python_functions.asp
+
+Arguments VS Parameters
+
+    The power of functions beyond their reusability, is their ability to be dynamic. For example, we can give a function parameters inside of the
+    brackets, to expand their utility.
+    
+    For example:
+    
+        def say_hello(name,emoji):
+            print(f"Hello {name}! {emoji})
+            
+    The arguments are the actual values provided to the functions, saved as the parameters.
+    ex:
+    
+        say_hello('Jaime', '👋')
+        
+        This would result in the following: Hello Jaime! 👋 
+        
+    There is such thing as keyword arguments, which allow us to explicitly set our arguments to our parameters, ex: 
+    say_hello(emoji="👋", name="Jaime")
+    
+    Notice that in the parameters, name comes before emoji but in the arguments, we listed the emoji first. Without the keywords,
+    the emoji would have been saved to the name parameter and would not have followed the desired format.
+    
+    We can also set defaults in our parameters in the function definition. This enables us to have default values to fall back on should a function
+    be called without argument values. ex:
+    
+    def say_hello(name = "Darth Vader", emoji = "🚀")
+    
+    If we call say_hello(), the default values will be output in the message.
+    
+Return
+
+    The return keyword commands a function to output something when called.
+    
+    This is useful in many ways, one of which when defining a function that does some form of math.
+    ex:
+    
+        def sum(num1, num2):
+            return num1 + num2
+          
+        print(sum(10,5)) -> outputs: 15
+    
+    * Return ends the function flow *
+        
+ Methods vs Functions
+ 
+    example of functions:
+    print()
+        
+    example of methods:
+    message = "hello"
+    
+    message.capitalize()
+    
+    
+    The difference is that methods are owned by objects, therefore, when calling a method, one must call the object first and then the method they want
+    using the '.' accessor. 
+  
+Docstrings
+
+    Docstrings allow for a programmer to comment inside of our function in a way that provides information about our function.
+    
+    ex:
+    
+        def test(a):
+            '''
+            Info: This function tests and prints paramater a
+            '''
+            print(a)
+            
+        We can see the information in a variety of ways, such as hovering over the function in our IDE, calling the help function, or using
+        a dunder method as follows:
+        
+        print(test.__doc__) -> outputs the docstring we wrote in our test function
+        
+For more information on docstrings:
+https://www.programiz.com/python-programming/docstrings
+
+
     
