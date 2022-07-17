@@ -170,6 +170,57 @@ Enumerate
             
     This would return the indices and letters inside hello, [0] h, [1] e, so on so forth
     
- 
+While Loops
+
+    While loops are another powerful form of loops, as they allow for code to execute until a certain condition is no longer met.
+    ex:
+    
+        i = 0
+        while i < 50:
+            print(i)
+            i += 1
+            
+    This will print all numbers between 0 to 49. It is important to note that you must include 'i += 1' or something to this effect, as this
+    ensures that after each iteration, i is incremented by one, and the loop will not be an infinite loop.
+    
+For more information on While Loops:
+https://www.w3schools.com/python/python_while_loops.asp
+
+Break, Continue, Pass
+    
+    The break, continue, and pass keywords are all forms of control flow. 
+    
+    The break statement, allows for us to stop a loop even if the while condition is true.
+    ex:
+    
+        i = 0
+        while i < 6:
+            print(i)
+            if i == 3:
+                break
+            i += 1
+    This code would print 1 to 6, but the if statement executes a break statement upon reaching the number 3. Therefore, the loop will exit at number 3.
+    
+    The continue statement allows us to stop a loop at the current iteration, and continue with the next.
+    ex:
+    
+        i = 0
+        while i < 6:
+            i += 1
+            if i == 3:
+                continue
+            print(i)
+    This code would print 1 to 6, but the if statement executes a continue statement upon reaching the number 3. Therefore, the loop will skip printing
+    the number 3, and instead will print numbers 1, 2, 4, 5, and 6.
+    
+    The pass statment is rarely used, but essentially tells the code to move to the next line. It can be useful as a placeholder.
+    ex:
+    
+       for item in my_list:
+        pass
+        
+    This code will do absolutely nothing but can act as a placeholder while you are designing your loop.
+    
+
     
     
