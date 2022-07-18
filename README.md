@@ -366,7 +366,87 @@ Rules for function parameters
     ex:
     
         def super_func(name, *args, name="Jaime", **kwargs):
+ 
+Walrus Operator
 
-
+    The walrus operator ':=' is a newer feature in Python
+    
+    It enables us to assign values to variables as part of a larger expression. 
+    ex:
+    
+    a = "hellooooooo"
+    
+    if ((n := len(a)) > 10):
+        print(f"Too long! {n} elements")
         
-   
+    This is efficient as we only need to calculate the length of a once, rather than having to call it once in the if statement and again in the print
+    statement.
+    
+Scope
+
+    Scope, in a nutshell, is what variables a part of a program has access to.
+    
+    There are 4 kinds of scopes in Python:
+    1) Local
+    2) Parent local
+    3) Global
+    4) Built-in
+    
+    If a variable is part of a function, meaning it has been declared within the function, it is usually part of local scope, meaning things 
+    outside of the function typically cannot access and use it.
+    
+    If a function is nested within a function, it has access to the parent function's variables, meaning it has parent local scope.
+    
+    If a variable is not part of a function, typically it is part of the global scope, meaning any part of the program can access and use it.
+    
+    Built-in scope typically applies to built-in functions in Python
+    
+    
+For more information on scope:
+https://www.w3schools.com/python/python_scope.asp
+
+Global and dependency injection
+
+    Global is a keyword in Python that allows for varaibles to be used outside of their scope.
+    ex:
+    
+    total = 0
+    
+    def count():
+    global total += 1
+    return total
+    
+    This isn't a very good way to accomplish this goal. Instead, we can use dependency injection in order to accomplish this task.
+    ex:
+    
+    def count(total):
+        total += 1
+        return total
+        
+For more info on the global keyword:
+https://www.w3schools.com/python/ref_keyword_global.asp
+
+Nonlocal keyword
+    
+    The nonlocal keyword is a new feature in Python that allows us to use variables that are not global variables but are outside of a function's
+    scope.
+    ex:
+    
+        def outer():
+            x = "local"
+            def inner():
+                nonlocal x
+                x = "nonlocal"
+                print("inner:", x) -> outputs - outer: nonlocal
+              
+             inner()
+             print("outer:", x) -> outputs - outer: nonlocal
+        
+        outer()
+        
+     This works because we are letting the program know that we wish to use the already declared variable 'x', rather than creating a new variable
+     within our function. It is advised to not use this technique as it usually complicates your code, but there are special case uses for this
+     nonlocal keyword.
+
+For more information on nonlocal scope:
+https://www.w3schools.com/python/ref_keyword_nonlocal.asp
